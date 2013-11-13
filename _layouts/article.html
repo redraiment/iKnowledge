@@ -49,6 +49,11 @@
         <div id="content">
           {{ content }}
         </div>
+        <div id="log">
+          {% for log in page.logs %}
+          <p>[{{ log.date | date: '%Y-%m-%d %H:%M:%S' }}]<a href="mailto:{{ log.email }}">{{ log.author }}</a>：{{ log.message }}</p>
+          {% endfor %}
+        </div>
       </div>
       <div id="copyright">
         <p>&copy; 2012-{{ site.time | date: '%Y' }} {{ site.author.name }} &lt;{{ site.author.email }}&gt; - {{ site.blog.name }} - {{ site.blog.url }}</p>

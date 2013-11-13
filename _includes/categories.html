@@ -1,7 +1,12 @@
 <ul>
   {% for e in include.root %}
   <li>
-    <a href="/archive/{{ e.name }}.html">{{ e.name }}({{ site.categories[e.name] | size }})</a>
+    {% capture count %}{{ site.categories[e.name] | size }}{% endcapture %}
+    {% if count != '0' %}
+    <a href="/archive/{{ e.name }}.html">{{ e.name }}({{ count }})</a>
+    {% else %}
+    <a href="#">{{ e.name }}</a>
+    {% endif %}
     {% if e.children %}
       {% include categories.html root=e.children %}
     {% endif %}

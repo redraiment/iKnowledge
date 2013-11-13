@@ -30,3 +30,19 @@
 }
 
 /* 列表 */
+#content ol, #content ul {
+    margin-left: 2em;
+}
+
+#content li {
+    margin: 0.5em 0em;
+    list-style-position: outside;
+}
+
+#content ol li {
+    list-style-type: decimal;
+}
+
+#content ul li {
+    list-style-type: disc;
+}

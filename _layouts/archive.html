@@ -1,20 +1,10 @@
 ---
 layout: article
 ---
-<table>
-  <thead>
-    <tr>
-      <th>文章</th>
-      <th>日期</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for post in page.posts %}
-    <tr>
-      <td>
-        <a href="{{ post.url }}">{{ post.title }}</a></td>
-      <td>{{ post.date | date: '%Y-%m-%d' }}</td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
+{% for post in page.posts %}
+<div class="article">
+  <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+  <p>{{ post.excerpt | strip_html | newline_to_br }}</p>
+  <div class="timestamp">{{ post.date | date: '%Y-%m-%d %H:%M:%S' }}</div>
+</div>
+{% endfor %}

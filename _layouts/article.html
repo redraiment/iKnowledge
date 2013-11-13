@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC
+ "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="author" content="{{ site.author.email }}" />
+    <meta name="keywords" content="{{ site.author.id }},{{ site.author.name }},{{ site.name }}" />
+    <meta name="description" content="{{ page.excerpt }}" />
+
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.blog.name }} - {{ site.blog.url }}</title>
+
+    <link rel="shortcut icon" type="image/png" href="/resource/image/fav.png" />
+    <link rel="apple-touch-icon" sizes="57x57" type="image/png" href="/resource/image/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="114x114" type="image/png" href="/resource/image/apple-icon-114x114.png" />
+
+    <link rel="stylesheet" type="text/css" href="/resource/style/iKnowledge.css" media="screen" />
+  </head>
+  <body>
+    <a name="top"></a>
+    <div id="container">
+      <div id="logo">
+        <input id="search" type="text" value="站内搜索" />
+        <h1>{{ site.blog.name }} - {{ site.blog.url }}</h1>
+        <h2>{{ site.blog.motto }}</h2>
+      </div>
+      <div id="navigate">
+        <img width="200" height="200" src="/resource/image/avatar.gif" />
+        <div id="bio">
+          <a href="/">关于我</a>
+        </div>
+      </div>
+      <div id="main">
+        <div id="abstract">
+          <div id="toolbar">
+            <label>分享到:</label>
+            <img src="/resource/image/share-sina.gif" />
+          </div>
+          <h1>{{ page.title }}</h1>
+        </div>
+        <div id="content">
+          {{ content }}
+        </div>
+      </div>
+      <div id="copyright">
+        <p>&copy; 2012-{{ site.time | date: '%Y' }} {{ site.author.name }} &lt;{{ site.author.email }}&gt; - {{ site.blog.name }} - {{ site.blog.url }}</p>
+      </div>
+    </div>
+  </body>
+</html>

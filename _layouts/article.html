@@ -18,12 +18,17 @@
     <link rel="stylesheet" type="text/css" href="/resource/style/article.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="/resource/style/highlight.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="/resource/style/category.css" media="screen" />
+
+    <script language="JavaScript" type="text/javascript" src="/resource/script/iKnowledge.js"></script>
   </head>
   <body>
     <a name="top"></a>
     <div id="container">
       <div id="logo">
-        <input id="search" type="text" value="站内搜索" />
+        <input id="search" type="text" value="站内搜索"
+               onkeyup="doSearch(event);"
+               onfocus="doFocus();"
+               onblur="doBlur();"/>
         <h1>{{ site.blog.name }} - {{ site.blog.url }}</h1>
         <h2>{{ site.blog.motto }}</h2>
       </div>

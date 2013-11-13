@@ -47,6 +47,7 @@ a:hover {
     line-height: 2em;
     background: url(../image/search-icon.png) no-repeat scroll 3px -26px white;
     padding-left: 2em;
+    color: #808080;
 }
 
 /* 导航 */

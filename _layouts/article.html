@@ -59,7 +59,11 @@
         </div>
         <div id="log">
           {% for log in page.logs %}
-          <p>[{{ log.date | date: '%Y-%m-%d %H:%M:%S' }}]<a href="mailto:{{ log.email }}">{{ log.author }}</a>：{{ log.message }}</p>
+          <div class="record">
+            <a href="mailto:{{ log.email }}">{{ log.author }}</a>：
+            <span class="message">{{ log.message }}</span>
+            <label class="timestamp">[{{ log.date | date: '%Y-%m-%d %H:%M:%S' }}]</label>
+          </div>
           {% endfor %}
         </div>
       </div>

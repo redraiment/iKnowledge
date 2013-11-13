@@ -4,7 +4,7 @@
 }
 
 body {
-    font-family: Arial,Verdana,"BitStream vera Sans",Tahoma,Helvetica,Sans-serif;
+    font-family: Helvetica,​Arial,​sans-serif;
     font-size: 14px;
 }
 
@@ -84,19 +84,6 @@ a:hover {
 
 #abstract h1 {
     font-size: x-large;
-}
-
-/* 文章 */
-#content h1 {
-    font-size: large;
-    color: #008000;
-    margin-top: 1.5ex;
-}
-
-#content p {
-    text-indent: 2em;
-    margin-top: 1ex;
-    margin-bottom: 1ex;
 }
 
 /* 页尾 */

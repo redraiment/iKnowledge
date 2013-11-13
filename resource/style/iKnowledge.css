@@ -42,9 +42,11 @@ a:hover {
 #search {
     float: right;
     font-size: x-large;
-    width: 30em;
+    width: 28em;
     height: 2em;
     line-height: 2em;
+    background: url(../image/search-icon.png) no-repeat scroll 3px -26px white;
+    padding-left: 2em;
 }
 
 /* 导航 */

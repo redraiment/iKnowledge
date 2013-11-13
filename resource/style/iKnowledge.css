@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial,Verdana,"BitStream vera Sans",Tahoma,Helvetica,Sans-serif;
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+    color: #3070A0;
+}
+
+a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#container {
+    margin: 1em auto;
+    width: 990px;
+}
+
+/* logo */
+
+#logo {
+    background-color: #D4E3F5;
+    padding: 1em;
+}
+
+#logo h1 {
+    color: #004098;
+}
+
+#logo h2 {
+    font-size: small;
+    color: #777666;
+}
+
+#search {
+    float: right;
+    font-size: x-large;
+    width: 30em;
+    height: 2em;
+    line-height: 2em;
+}
+
+/* 导航 */
+
+#navigate {
+    width: 210px;
+    float: left;
+    border-right: 1px solid #99BCE8;
+}
+
+.widget h1 {
+    font-size: large;
+    color: #00408C;
+    border-bottom: 1px dashed #99BCE8;
+    margin-top: 1em;
+}
+
+.widget ul {
+    margin-left: 1em;
+    line-height: 1.5em;
+    list-style-type: none;
+    list-style-position: outside;
+    list-style-image: url(/image/arrow.png);
+}
+
+/* 正文 */
+
+#main {
+    font-size: 16px;
+    margin-left: 220px;
+}
+
+/* 工具栏 */
+#toolbar {
+    margin: 1em 0;
+}
+
+#abstract h1 {
+    font-size: x-large;
+}
+
+/* 文章 */
+#content h1 {
+    font-size: large;
+    color: #008000;
+    margin-top: 1.5ex;
+}
+
+#content p {
+    text-indent: 2em;
+    margin-top: 1ex;
+    margin-bottom: 1ex;
+}
+
+/* 页尾 */
+#copyright {
+    clear: both;
+    border-top: 1px solid #99BCE8;
+    margin-top: 1ex;
+    text-align: center;
+}

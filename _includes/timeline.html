@@ -1,0 +1,33 @@
+{% assign c_year = 0 %}
+{% assign c_month = 0 %}
+{% assign count = 0 %}
+<ul>
+  {% for post in site.posts %}
+    {% capture p_year %}{{ post.date | date: '%Y' }}{% endcapture %}
+    {% capture p_month %}{{ post.date | date: '%m' }}{% endcapture %}
+
+    {% if c_year != p_year or c_month != p_month %}
+      {% if count != 0 %}
+      <li><a href="/archive/{{ c_year }}-{{ c_month }}.html">{{ c_month }}月({{ count }})</a></li>
+        {% assign count = 0 %}
+      {% endif %}
+    {% endif %}
+
+    {% if c_year != p_year %}
+      {% if c_year != 0 %}
+    </ul>
+  </li>
+      {% endif %}
+  <li>
+    <a href="#">{{ p_year }}年</a>
+    <ul>
+    {% endif %}
+
+    {% assign c_year = p_year %}
+    {% assign c_month = p_month %}
+    {% capture count %}{{ count | plus: 1 }}{% endcapture %}
+  {% endfor %}
+      <li><a href="/archive/{{ c_year }}-{{ c_month }}.html">{{ c_month }}月({{ count }})</a></li>
+    </ul>
+  </li>
+</ul>

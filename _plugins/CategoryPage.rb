@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 # iKnowledge归档插件
-# 按照时间归档文章
+# 按照类型和时间两种方式归档文章
 module IKnowledge
 
   # 归档页面
@@ -19,6 +19,15 @@ module IKnowledge
         'title' => name,
         'posts' => posts
       })
+    end
+  end
+
+  # 按照类型归档
+  class CategoryPageGenerator < Jekyll::Generator
+    def generate(site)
+      site.categories.each do |category, posts|
+        site.pages << ArchivePage.new(site, category, posts)
+      end
     end
   end
 

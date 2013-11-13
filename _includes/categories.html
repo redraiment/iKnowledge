@@ -1,0 +1,10 @@
+<ul>
+  {% for e in include.root %}
+  <li>
+    <a href="/archive/{{ e.name }}.html">{{ e.name }}({{ site.categories[e.name] | size }})</a>
+    {% if e.children %}
+      {% include categories.html root=e.children %}
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>

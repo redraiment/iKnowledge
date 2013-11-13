@@ -1,0 +1,16 @@
+- name: 幸福生活
+  children:
+    - name: 2B青年欢乐多
+    - name: 新年快乐
+
+- name: 我是程序员
+  excerpt: xxx
+  children:
+    - name: 编程语言生态
+    - name: 数据结构与算法
+    - name: 工具技师
+    - name: 项目
+
+- name: 思考与感悟
+  children:
+    - name: 学习方法

@@ -1,7 +1,8 @@
 <ul>
   {% for e in include.root %}
   <li>
-    {% capture count %}{{ site.categories[e.name] | size }}{% endcapture %}
+    {% capture name %}{{ e.name | downcase }}{% endcapture %}
+    {% capture count %}{{ site.categories[name] | size }}{% endcapture %}
     {% if count != '0' %}
     <a href="/archive/{{ e.name }}.html">{{ e.name }}({{ count }})</a>
     {% else %}

@@ -4,7 +4,7 @@
     {% capture name %}{{ e.name | downcase }}{% endcapture %}
     {% capture count %}{{ site.categories[name] | size }}{% endcapture %}
     {% if count != '0' %}
-    <a href="/archive/{{ e.name }}.html">{{ e.name }}({{ count }})</a>
+    <a href="/archive/{{ name }}.html">{{ e.name }}({{ count }})</a>
     {% else %}
     <a href="#">{{ e.name }}</a>
     {% endif %}

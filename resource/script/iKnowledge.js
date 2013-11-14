@@ -1,10 +1,10 @@
 var doSearch = function(e) {
     e = window.event? event: e;
     if (e.keyCode == 13) {
-        var google = 'http://www.google.com/cse/publicurl?cx=016566116830714177436:pewf8jtunkm&q=';
+        var google = 'http://www.google.com/#q=site:' + location.hostname;
         var word = document.getElementById('search').value;
-        var url = google + encodeURIComponent(word);
-        open(url, 'redraiment-search');
+        var url = google + '+' + encodeURIComponent(word);
+        open(url, 'iKnowledge-search');
     }
 };
 

@@ -1,7 +1,8 @@
 <!DOCTYPE html PUBLIC
  "-//W3C//DTD XHTML 1.0 Transitional//EN"
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:wb="http://open.weibo.com/wb">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="author" content="{{ site.author.email }}" />
@@ -19,6 +20,7 @@
     <link rel="stylesheet" type="text/css" href="/resource/style/highlight.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="/resource/style/category.css" media="screen" />
 
+    <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=1192214979" type="text/javascript" charset="utf-8"></script>
     <script language="JavaScript" type="text/javascript" src="/resource/script/iKnowledge.js"></script>
   </head>
   <body>
@@ -66,6 +68,7 @@
           </div>
           {% endfor %}
         </div>
+        <wb:comments url="auto" fontsize="14" width="auto" skin="silver" appkey="{{ site.author.weibo.appcode }}" ralateuid="{{ site.author.weibo.id }}"></wb:comments>
       </div>
       <div id="copyright">
         <p>&copy; 2012-{{ site.time | date: '%Y' }} {{ site.author.name }} &lt;{{ site.author.email }}&gt; - {{ site.blog.name }} - {{ site.blog.url }}</p>

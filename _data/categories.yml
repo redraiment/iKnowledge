@@ -1,8 +1,8 @@
 - name: 幸福生活
   children:
     - name: 2B青年欢乐多
+    - name: 我的世界观
     - name: 新年快乐
-    - name: 人生如戏
 
 - name: 我是程序员
   children:
@@ -19,7 +19,7 @@
         - name: Python
         - name: Ruby
         - name: Clojure
-    - name: 代码片段
+    - name: 代码分享
       excerpt:
         综合地运用某一种编程语言的语法特性，
         实现别人提出的算法。

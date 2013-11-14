@@ -2,15 +2,55 @@
   children:
     - name: 2B青年欢乐多
     - name: 新年快乐
+    - name: 人生如戏
 
 - name: 我是程序员
-  excerpt: xxx
   children:
     - name: 编程语言生态
-    - name: 数据结构与算法
+      excerpt:
+        学习一门编程语言不是单纯得学习语法，
+        还要掌握如果管理依赖、调试、测试等。
+      children:
+        - name: C语言
+          children:
+            - name: C语言实验报告
+        - name: Java
+        - name: JavaScript
+        - name: Python
+        - name: Ruby
+        - name: Clojure
+    - name: 代码片段
+      excerpt:
+        综合地运用某一种编程语言的语法特性，
+        实现别人提出的算法。
+      children:
+        - name: 基础算法
+          children:
+            - name: 完美数
+            - name: 杨辉三角
+            - name: 质数
+            - name: 斐波那契数
+        - name: 数据结构
+        - name: 杭电100题
+        - name: 加密解密
+        - name: 设计模式
+        - name: 解释器
+          children:
+            - name: BrainF*ck
+            - name: Basic
+            - name: SmallC
     - name: 工具技师
+      excerpt:
+        特定领域的小工具型项目，通常仅使用一种
+        或少数的编程语言/工具来实现。
+      children:
+        - name: 双向管道
+        - name: 金山词霸生词本转换器
+        - name: 好友买卖外挂
     - name: 项目
-
-- name: 思考与感悟
-  children:
-    - name: 学习方法
+      excerpt:
+        长期维护，通常会用到多种编程语言/工具来实现，
+        甚至包含多个子项目。
+      children:
+        - name: iKnowledge
+        - name: 中文计算器

@@ -90,20 +90,6 @@ a:hover {
 }
 
 /* 页尾 */
-#log {
-    padding-top: 1em;
-    font-size: small;
-    text-align: right;
-}
-
-#log .record {
-    margin: 0.5em 0em;
-}
-
-#log .timestamp {
-    color: #999999;
-}
-
 #copyright {
     clear: both;
     border-top: 1px solid #99BCE8;

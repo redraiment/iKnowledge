@@ -5,11 +5,11 @@
       xmlns:wb="http://open.weibo.com/wb">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="author" content="{{ site.author.email }}" />
-    <meta name="keywords" content="{{ site.author.id }},{{ site.author.name }},{{ site.name }}" />
+    <meta name="author" content="{{ site.data.blog.author.email }}" />
+    <meta name="keywords" content="{{ site.data.blog.author.id }},{{ site.data.blog.author.name }},{{ site.name }}" />
     <meta name="description" content="{{ page.excerpt }}" />
 
-    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.blog.name }} - {{ site.blog.url }}</title>
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.data.blog.name }} - {{ site.data.blog.url }}</title>
 
     <link rel="shortcut icon" type="image/png" href="/resource/image/fav.png" />
     <link rel="apple-touch-icon" sizes="57x57" type="image/png" href="/resource/image/apple-icon-57x57.png" />
@@ -31,8 +31,8 @@
                onkeyup="doSearch(event);"
                onfocus="doFocus();"
                onblur="doBlur();"/>
-        <h1>{{ site.blog.name }} - {{ site.blog.url }}</h1>
-        <h2>{{ site.blog.motto }}</h2>
+        <h1>{{ site.data.blog.name }} - {{ site.data.blog.url }}</h1>
+        <h2>{{ site.data.blog.motto }}</h2>
       </div>
       <div id="navigate">
         <img width="200" height="200" src="/resource/image/avatar.gif" />
@@ -64,10 +64,10 @@
           </div>
           {% endfor %}
         </div>
-        <wb:comments url="auto" fontsize="14" width="auto" skin="silver" appkey="{{ site.author.weibo.appcode }}" ralateuid="{{ site.author.weibo.id }}"></wb:comments>
+        <wb:comments url="auto" fontsize="14" width="auto" skin="silver" appkey="{{ site.data.blog.comment.appcode }}" ralateuid="{{ site.data.blog.comment.id }}"></wb:comments>
       </div>
       <div id="copyright">
-        <p>&copy; 2012-{{ site.time | date: '%Y' }} {{ site.author.name }} &lt;{{ site.author.email }}&gt; - {{ site.blog.name }} - {{ site.blog.url }}</p>
+        <p>&copy; 2012-{{ site.time | date: '%Y' }} {{ site.data.blog.author.name }} &lt;{{ site.data.blog.author.email }}&gt; - {{ site.data.blog.name }} - {{ site.data.blog.url }}</p>
       </div>
     </div>
   </body>

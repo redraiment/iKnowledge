@@ -3,6 +3,6 @@ pygments: true
 encoding: UTF-8
 permalink: /:year-:month-:day/:title/
 markdown: redcarpet
-include: ['.nojekyll']
+include: ['.nojekyll', '.gitignore']
 exclude: ['LICENSE', 'README.md']
 destination: zzp-me.github.io

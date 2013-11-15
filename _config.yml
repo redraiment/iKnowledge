@@ -1,7 +1,7 @@
 name: iKnowledge
 pygments: true
 encoding: UTF-8
-permalink: /:year-:month-:day/:title.html
+permalink: /:year-:month-:day/:title/
 markdown: redcarpet
 include: ['.nojekyll']
 exclude: ['LICENSE', 'README.md']

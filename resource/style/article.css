@@ -47,6 +47,18 @@
     list-style-type: disc;
 }
 
+/* 表格 */
+#article table {
+    border-collapse: collapse;
+    empty-cells: show;
+}
+
+#article th, #article td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+/* 修改历史 */
 #log {
     padding-top: 1em;
     font-size: small;

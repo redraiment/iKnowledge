@@ -17,8 +17,8 @@ module IKnowledge
 
   class DomainGenerator < Jekyll::Generator
     def generate(site)
-      if site.config['blog'] and site.config['blog']['url']
-        site.pages << CNamePage.new(site, site.config['blog']['url'])
+      if site.data['blog'] and site.data['blog']['url']
+        site.pages << CNamePage.new(site, site.data['blog']['url'])
       end
     end
   end

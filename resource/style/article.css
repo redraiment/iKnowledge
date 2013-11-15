@@ -1,28 +1,28 @@
 /* 文章 */
-#content {
+#article {
     color: #555555;
 }
 
 /* 标题 */
-#content h1, #content h2, #content h3 {
+#article h1, #article h2, #article h3 {
     color: #008000;
     margin-top: 1.5ex;
 }
 
-#content h1 {
+#article h1 {
     font-size: xx-large;
 }
 
-#content h2 {
+#article h2 {
     font-size: x-large;
 }
 
-#content h3 {
+#article h3 {
     font-size: large;
 }
 
 /* 段落 */
-#content p {
+#article p {
     line-height: 1.4em;
     text-indent: 2em;
     margin-top: 1ex;
@@ -30,19 +30,19 @@
 }
 
 /* 列表 */
-#content ol, #content ul {
+#article ol, #article ul {
     margin-left: 2em;
 }
 
-#content li {
+#article li {
     margin: 0.5em 0em;
     list-style-position: outside;
 }
 
-#content ol li {
+#article ol li {
     list-style-type: decimal;
 }
 
-#content ul li {
+#article ul li {
     list-style-type: disc;
 }

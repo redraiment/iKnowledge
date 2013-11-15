@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC
+ "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:wb="http://open.weibo.com/wb">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="author" content="{{ site.data.blog.author.email }}" />
+    <meta name="keywords" content="{{ site.data.blog.author.id }},{{ site.data.blog.author.name }},{{ site.name }}" />
+    <meta name="description" content="{{ page.excerpt }}" />
+
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.data.blog.name }} - {{ site.data.blog.url }}</title>
+
+    <link rel="shortcut icon" type="image/png" href="/resource/image/fav.png" />
+    <link rel="apple-touch-icon" sizes="57x57" type="image/png" href="/resource/image/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="114x114" type="image/png" href="/resource/image/apple-icon-114x114.png" />
+
+    <link rel="stylesheet" type="text/css" href="/resource/style/iKnowledge.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/resource/style/highlight.css" media="screen" />
+    {% if page.style %}<link rel="stylesheet" type="text/css" href="/resource/style/{{ page.style }}.css" media="screen" />{% endif %}
+
+    <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=1192214979" type="text/javascript" charset="utf-8"></script>
+    <script language="JavaScript" type="text/javascript" src="/resource/script/iKnowledge.js"></script>
+  </head>
+  <body>
+    <a name="top"></a>
+    <div id="container">
+      <div id="logo">
+        <input id="search" type="text" value="站内搜索"
+               onkeyup="doSearch(event);"
+               onfocus="doFocus();"
+               onblur="doBlur();"/>
+        <h1>{{ site.data.blog.name }} - {{ site.data.blog.url }}</h1>
+        <h2>{{ site.data.blog.motto }}</h2>
+      </div>
+      <div id="navigate">
+        <img width="200" height="200" src="/resource/image/avatar.gif" />
+        <div id="bio">
+          <a href="/">关于我</a>
+        </div>
+        <div class="widget">
+          <h1>分类归档</h1>
+          {% include categories.html root=site.data.categories %}
+        </div>
+        <div class="widget">
+          <h1>时间归档</h1>
+          {% include timeline.html %}
+        </div>
+      </div>
+      <div id="main">
+        <div id="abstract">
+          <h1>{{ page.title }}</h1>
+        </div>
+        <div id="content">
+          {{ content }}
+        </div>
+        <wb:comments url="auto" fontsize="14" width="auto" skin="silver" appkey="{{ site.data.blog.comment.appcode }}" ralateuid="{{ site.data.blog.comment.id }}"></wb:comments>
+      </div>
+      <div id="copyright">
+        <p>&copy; 2012-{{ site.time | date: '%Y' }} {{ site.data.blog.author.name }} &lt;{{ site.data.blog.author.email }}&gt; - {{ site.data.blog.name }} - {{ site.data.blog.url }}</p>
+      </div>
+    </div>
+  </body>
+</html>

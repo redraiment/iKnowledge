@@ -1,10 +1,13 @@
 ---
-layout: article
+layout: iKnowledge
+style: archive
 ---
-{% for post in page.posts %}
-<div class="article">
-  <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-  <p>{{ post.excerpt | strip_html | newline_to_br }}</p>
-  <div class="timestamp">{{ post.date | date: '%Y-%m-%d %H:%M:%S' }}</div>
+<div id="archive">
+  {% for post in page.posts %}
+  <div class="post">
+    <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+    <p>{{ post.excerpt | strip_html | newline_to_br }}</p>
+    <div class="timestamp">{{ post.date | date: '%Y-%m-%d %H:%M:%S' }}</div>
+  </div>
+  {% endfor %}
 </div>
-{% endfor %}

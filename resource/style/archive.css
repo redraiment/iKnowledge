@@ -1,14 +1,14 @@
-.article {
+#archive {
     margin-bottom: 2em;
     border-bottom: 1px dashed #99BCE8;
 }
 
-.article h1 a {
+#archive h1 a {
     font-size: x-large;
     color: #008000;
 }
 
-.article .timestamp {
+#archive .timestamp {
     font-size: small;
     text-align: right;
     color: #999999;

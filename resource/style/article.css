@@ -47,6 +47,19 @@
     list-style-type: disc;
 }
 
+#article dl {
+    margin: 0px;
+}
+
+#article dt {
+    margin: 0.8em 0em 0.4em 1em;
+    font-weight: bold;
+}
+
+#article dd {
+    margin: 0.4em 0em 0.4em 2em;
+}
+
 /* 表格 */
 .content-table {
     border-collapse: collapse;

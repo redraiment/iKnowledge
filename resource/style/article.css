@@ -48,12 +48,12 @@
 }
 
 /* 表格 */
-#article table {
+.content-table {
     border-collapse: collapse;
     empty-cells: show;
 }
 
-#article th, #article td {
+.content-table th, .content-table td {
     border: 1px solid black;
     padding: 5px;
 }

@@ -6,3 +6,5 @@ markdown: redcarpet
 include: ['.nojekyll', '.gitignore']
 exclude: ['LICENSE', 'README.md']
 destination: zzp-me.github.io
+redcarpet:
+  extensions: ['autolink', 'tables']

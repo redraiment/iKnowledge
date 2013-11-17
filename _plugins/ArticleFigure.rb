@@ -5,12 +5,18 @@ module IKnowledge
   class ArticleFigureTag < Liquid::Tag
     def initialize(tag, text, tokens)
       super
-      @name = text;
+      value = text.split
+      @name = value[0];
+      @align = value.length > 1? value[1]: ''
     end
 
     def render(context)
       page = context.registers[:page]
-      "<img src=\"/resource#{page['url']}#@name\" />"
+      if @align == ''
+        "<img src=\"/resource#{page['url']}#@name\" />"
+      else
+        "<img align=\"#@align\" src=\"/resource#{page['url']}#@name\" />"
+      end
     end
   end
 end

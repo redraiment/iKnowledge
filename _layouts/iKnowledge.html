@@ -30,7 +30,9 @@
                onkeyup="doSearch(event);"
                onfocus="doFocus();"
                onblur="doBlur();"/>
-        <h1>{{ site.data.blog.name }} - {{ site.data.blog.url }}</h1>
+        <h1>
+          <a href="/">{{ site.data.blog.name }} - {{ site.data.blog.url }}</a>
+        </h1>
         <h2>{{ site.data.blog.motto }}</h2>
       </div>
       <div id="navigate">

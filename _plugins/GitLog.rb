@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+require 'pathname'
+
 # iKnowledge特色功能之一
 # 每篇文章末尾提供Git提交的记录，即展示修改历史
 # 很多人从来不会回头看自己写的文章/博客
@@ -17,21 +19,26 @@ module IKnowledge
         return
       end
 
-      pwd = Dir.pwd
-
-      workdir = File.join(site.source, '_posts')
-      Dir.chdir(workdir)
-      begin
-        git = Grit::Repo.new('.')
-      rescue
-        puts "如果您希望使用“修改历史”插件，请在_posts目录下创建git仓库"
-        puts "  cd _posts"
-        puts "  git init"
+      _posts = File.join(site.source, '_posts')
+      repo = [_posts, site.source].find {|src|
+        # 允许_posts独立作为一个仓库
+        File.directory? File.join(src, '.git')
+      }
+      if repo
+        root = Pathname.new(repo)
+      else
+        puts "如果您希望使用“修改历史”插件，请先创建git仓库"
         return
       end
 
+      pwd = Dir.pwd
+      Dir.chdir(repo)
+      git = Grit::Repo.new('.')
+
       site.posts.each do |post|
-        post.data['logs'] = git.log(File.basename(post.path)).map do |log|
+        post_path = Pathname.new(File.join(site.source, post.path))
+        git_path = post_path.relative_path_from(root).to_s
+        post.data['logs'] = git.log(git_path).map do |log|
           {
             'date' => log.committed_date,
             'message' => log.message.force_encoding('utf-8'),

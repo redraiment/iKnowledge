@@ -19,7 +19,7 @@ module IKnowledge
       sitemap = REXML::Document.new << REXML::XMLDecl.new("1.0", "UTF-8")
       sitemap.add_element(fill_urlset(site))
 
-
+      Dir::mkdir(site.dest) if !File.directory? site.dest
       filename = 'sitemap.xml'
       file = File.new(File.join(site.dest, filename), 'w')
       formatter = REXML::Formatters::Pretty.new(2)

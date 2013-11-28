@@ -23,9 +23,24 @@ module IKnowledge
 
   # 按照类型归档
   class CategoryPageGenerator < Jekyll::Generator
+    def walk(root)
+      excerpt = {}
+      root.each do |e|
+        excerpt[e['id'].downcase] = e['excerpt'] || ''
+        if e['children']
+          excerpt.merge! walk(e['children'])
+        end
+      end
+      excerpt
+    end
+
     def generate(site)
+      excerpt = walk(site.data['categories'])
+
       site.categories.each do |category, posts|
-        site.pages << ArchivePage.new(site, category, posts)
+        page = ArchivePage.new(site, category, posts)
+        page.data['excerpt'] = excerpt[category]
+        site.pages << page
       end
     end
   end

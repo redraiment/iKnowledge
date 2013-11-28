@@ -34,11 +34,12 @@ module IKnowledge
   class CategoryListTag < Liquid::Tag
     def walk(root)
       '<ul>' + root.map do |e|
-        name = e['name'].downcase
-        count = @site.categories[name].length
+        id = e['id'].downcase
+        count = @site.categories[id].length
+        name = e['name'] || e['id']
 
-        label = count == 0? e['name']: "#{e['name']}(#{count})"
-        url = count == 0? '#': "/archive/#{name}.html"
+        label = count == 0? name: "#{name}(#{count})"
+        url = count == 0? '#': "/archive/#{id}.html"
 
         children = e['children']? walk(e['children']): ''
 

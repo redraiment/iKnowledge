@@ -1,6 +1,6 @@
-- name: iKnowledge
+- id: iKnowledge
   children:
-    - name: 第一版
-    - name: 第二版
+    - id: 第一版
+    - id: 第二版
 
-- name: 友情链接
+- id: 友情链接

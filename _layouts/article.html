@@ -2,6 +2,12 @@
 layout: iKnowledge
 style: article
 ---
+<div class="tags">
+  关键字：
+  {% for tag in page.tags %}
+  <a href="/archive/{{ tag.id }}.html">{{ tag.name }}</a>
+  {% endfor %}
+</div>
 <div id="article">
   {{ content }}
 </div>

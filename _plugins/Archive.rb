@@ -21,6 +21,36 @@ module IKnowledge
     end
   end
 
+  # 每篇文章所属类型
+  class CategoryOfPost < Jekyll::Generator
+    def walk(root, tags)
+      root.each do |e|
+        id = e['id'].downcase
+        name = e['name'] || e['id']
+        @all[id] = tags + [{
+          'id' => id,
+          'name' => name
+        }]
+
+        if e['children']
+          walk e['children'], @all[id]
+        end
+      end
+    end
+
+    def generate(site)
+      @all ||= {}
+      walk site.data['categories'], []
+
+      site.posts.each do |post|
+        post.tags = (post.categories || [post.category])
+                  .map {|category| @all[category] }
+                  .flatten
+                  .uniq
+      end
+    end
+  end
+
   # 按照类型归档
   class CategoryPageGenerator < Jekyll::Generator
     def walk(root)

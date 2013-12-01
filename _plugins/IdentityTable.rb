@@ -9,7 +9,7 @@ module Jekyll
 
     def write(dest)
       if self.output.include? '<table>'
-        self.output['<table>'] = '<table class="content-table">'
+        self.output.gsub!('<table>', '<table class="content-table">')
       end
       original_write(dest);
     end
